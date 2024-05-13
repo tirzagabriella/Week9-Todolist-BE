@@ -24,7 +24,7 @@ class SessionData(BaseModel):
 # cookie parameters
 cookie_params = CookieParameters(
     httponly = True,
-    samesite = "strict"
+    samesite = "none"
 )
 
 # Uses UUID
