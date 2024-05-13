@@ -181,12 +181,14 @@ async def create_session(name: str, response: Response):
     data = SessionData(username=name, token=token)
 
     await backend.create(session, data)
-    # cookie.attach_to_response(response, session)
+    cookie.attach_to_response(response, session)
 
-    # return f"created session for {name}"
-    hashed = cookie.signer.dumps(session.hex)
+    response.headers["Set-Cookie"] += "; SameSite=None"
+
+    return f"created session for {name}"
+    # hashed = cookie.signer.dumps(session.hex)
     
-    return SessionHashResponse(session_id_hash=hashed)
+    # return SessionHashResponse(session_id_hash=hashed)
 
 
 @app.get("/whoami", dependencies=[Depends(cookie)])
