@@ -21,7 +21,11 @@ class SessionData(BaseModel):
     username: str
     token: Token
 
-cookie_params = CookieParameters()
+# cookie parameters
+cookie_params = CookieParameters(
+    httponly = True,
+    samesite = "strict"
+)
 
 # Uses UUID
 cookie = SessionCookie(
