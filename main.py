@@ -21,10 +21,10 @@ class SessionData(BaseModel):
     username: str
     token: Token
 
-# cookie parameters
 cookie_params = CookieParameters(
-    httponly = True,
-    samesite = "none"
+    secure=True,  # Ensures cookie is sent over HTTPS
+    httponly=True,
+    samesite="none"  # Allows the cookie to be sent with cross-origin requests
 )
 
 # Uses UUID
@@ -99,10 +99,18 @@ def create_access_token(data: dict, expires_delta: Union[timedelta, None] = None
 
 app = FastAPI()
 
-# to handle cors
+# # to handle cors
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=["*"],
+#     allow_credentials=True,
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://week9-todolist-fe.vercel.app/"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
