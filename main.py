@@ -200,6 +200,9 @@ async def whoami(session_data: SessionData = Depends(verifier)):
 async def del_session(response: Response, session_id: UUID = Depends(cookie)):
     await backend.delete(session_id)
     cookie.delete_from_response(response)
+
+    response.headers["Set-Cookie"] += "; SameSite=None"
+    
     return "deleted session"
 
 # User endpoints
