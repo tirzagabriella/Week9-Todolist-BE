@@ -110,7 +110,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://sample-a6tfftdg5a-as.a.run.app/docs#/default/whoami_whoami_get","https://week9-todolist-fe.vercel.app"],
+    allow_origins=["https://sample-a6tfftdg5a-as.a.run.app/docs#","https://week9-todolist-fe.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
