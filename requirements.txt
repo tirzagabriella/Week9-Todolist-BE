@@ -3,3 +3,4 @@ fastapi_sessions==0.3.2
 pydantic==2.7.1
 python_jose==3.3.0
 SQLAlchemy==2.0.30
+psycopg2-binary==2.9.9
