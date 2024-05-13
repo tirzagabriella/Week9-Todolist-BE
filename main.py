@@ -21,11 +21,7 @@ class SessionData(BaseModel):
     username: str
     token: Token
 
-cookie_params = CookieParameters(
-    secure=True,  # Ensures cookie is sent over HTTPS
-    httponly=True,
-    samesite="none"  # Allows the cookie to be sent with cross-origin requests
-)
+cookie_params = CookieParameters()
 
 # Uses UUID
 cookie = SessionCookie(
