@@ -17,3 +17,8 @@ https://sample-a6tfftdg5a-as.a.run.app/docs
 ### User preferences cookies
 
 <img src="https://github.com/tirzagabriella/Week9-Todolist-FE/blob/main/Screenshot/user_preferences_cookies_language.jpeg" width="700" height="400" />
+
+## SS of addressed CORS
+
+<img src="https://github.com/tirzagabriella/Week9-Todolist-FE/blob/main/Screenshot/addressed_CORS.jpeg" width="700" height="400" />
+<img src="https://github.com/tirzagabriella/Week9-Todolist-FE/blob/main/Screenshot/CORS.jpeg" width="700" height="400" />
